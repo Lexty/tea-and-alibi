@@ -27,14 +27,30 @@
 </head>
 <body>
 <main>
-  <!-- opened from the game's Settings (?app, carried between the two pages): a way back that stays in view -->
+  <!-- opened from the game's Settings (?app, carried between the two pages): a way back that stays in view.
+       In the app these pages add exactly one history entry (language links and the other page replace it), so «back»
+       is history.back() to the Settings the player came from — a link to ./#/settings would stack a second Settings
+       whose own back arrow returns here. -->
   <a id="back" href="./#/settings" hidden>← Tea &amp; Alibi</a>
   <script>
     if (new URLSearchParams(location.search).has('app')) {
       document.documentElement.classList.add('in-app');
-      document.getElementById('back').hidden = false;
+      const back = document.getElementById('back');
+      back.hidden = false;
+      back.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (history.length > 1) history.back(); else location.replace('./#/settings');
+      });
       addEventListener('DOMContentLoaded', () => {
-        for (const a of document.querySelectorAll('a[href^="privacy.html"], a[href^="support.html"]')) a.href = a.getAttribute('href').replace('.html', '.html?app');
+        for (const a of document.querySelectorAll('a[href^="#"]')) a.addEventListener('click', (e) => {
+          e.preventDefault();
+          history.replaceState(null, '', a.getAttribute('href'));
+          document.querySelector(a.getAttribute('href')).scrollIntoView();
+        });
+        for (const a of document.querySelectorAll('a[href^="privacy.html"], a[href^="support.html"]')) {
+          a.href = a.getAttribute('href').replace('.html', '.html?app');
+          a.addEventListener('click', (e) => { e.preventDefault(); location.replace(a.href); });
+        }
       });
     }
   </script>
