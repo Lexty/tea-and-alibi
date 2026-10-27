@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#f4ead6" />
+<title>Tea & Alibi — Privacy Policy</title>
+<!-- The App Store's privacy policy URL. Static and self-contained: it ships in the app bundle and on the web. -->
+<style>
+  :root { --paper: #f4ead6; --ink: #3b2f25; --muted: #75655a; --accent: #2f6f68; --rule: #dccdb2; }
+  @media (prefers-color-scheme: dark) { :root { --paper: #231d18; --ink: #efe4d2; --muted: #b9aa98; --accent: #7fc0b6; --rule: #4a3f35; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 680px; margin: 0 auto; padding: max(24px, env(safe-area-inset-top)) 16px 48px; }
+  h1, h2 { font-family: "Playfair Display", Georgia, "Times New Roman", serif; line-height: 1.25; }
+  h1 { font-size: 30px; margin: 0 0 4px; }
+  h2 { font-size: 21px; margin: 28px 0 8px; }
+  #back { position: sticky; top: 0; display: block; margin: 0 -16px 8px; padding: max(10px, env(safe-area-inset-top)) 16px 10px; background: var(--paper); border-bottom: 1px solid var(--rule); font-weight: 700; text-decoration: none; }
+  #back[hidden] { display: none; }
+  .in-app { scroll-padding-top: calc(max(10px, env(safe-area-inset-top)) + 52px); }
+  .in-app main { padding-top: 0; }
+  nav { display: flex; gap: 16px; margin: 8px 0 24px; }
+  a { color: var(--accent); }
+  .date { color: var(--muted); font-size: 15px; margin: 0; }
+  section + section { border-top: 1px solid var(--rule); margin-top: 40px; padding-top: 8px; }
+</style>
+</head>
+<body>
+<main>
+  <!-- opened from the game's Settings (?app, carried between the two pages): a way back that stays in view -->
+  <a id="back" href="./#/settings" hidden>← Tea &amp; Alibi</a>
+  <script>
+    if (new URLSearchParams(location.search).has('app')) {
+      document.documentElement.classList.add('in-app');
+      document.getElementById('back').hidden = false;
+      addEventListener('DOMContentLoaded', () => {
+        for (const a of document.querySelectorAll('a[href^="privacy.html"], a[href^="support.html"]')) a.href = a.getAttribute('href').replace('.html', '.html?app');
+      });
+    }
+  </script>
+  <nav><a href="#en">English</a><a href="#ru">Русский</a><a href="#pt">Português</a></nav>
+
+  <section id="en" lang="en">
+    <h1>Privacy Policy</h1>
+    <p class="date">Tea & Alibi · effective 27 October 2026</p>
+    <h2>The short version</h2>
+    <p>Tea & Alibi does not collect, send or share any personal data. There are no accounts, no ads, no analytics and no tracking.</p>
+    <h2>What stays on your device</h2>
+    <p>The game saves your progress (solved cases, the board of each case, your notes) and your settings (language, text size, motion) on your device so that you can continue later. This data never leaves your device through the game. It is removed when you delete the app; on the web, when you clear the site's data.</p>
+    <p>If you use your device's own backup, such as iCloud Backup, that backup may include the game's saves under Apple's terms, not ours.</p>
+    <h2>Network</h2>
+    <p>The game works fully offline. The app makes no network requests of its own.</p>
+    <h2>Children</h2>
+    <p>Because nothing is collected, the game collects no data from children either.</p>
+    <h2>Changes</h2>
+    <p>If this policy ever changes, the new version will be published on this page with a new date.</p>
+    <h2>Contact</h2>
+    <p>Questions about privacy: <a href="mailto:alexandr.mdr@gmail.com">alexandr.mdr@gmail.com</a>.</p>
+  </section>
+
+  <section id="ru" lang="ru">
+    <h1>Политика конфиденциальности</h1>
+    <p class="date">Tea & Alibi · действует с 27 октября 2026 года</p>
+    <h2>Коротко</h2>
+    <p>Tea & Alibi не собирает, не отправляет и никому не передаёт персональные данные. В игре нет аккаунтов, рекламы, аналитики и отслеживания.</p>
+    <h2>Что хранится на вашем устройстве</h2>
+    <p>Игра сохраняет на устройстве ваш прогресс (раскрытые дела, доску каждого дела, ваши заметки) и настройки (язык, размер текста, анимацию), чтобы вы могли продолжить позже. Игра никуда эти данные не передаёт. Они удаляются вместе с приложением, а в веб-версии — при очистке данных сайта.</p>
+    <p>Если вы пользуетесь резервным копированием устройства, например iCloud, копия может включать сохранения игры — на условиях Apple, а не наших.</p>
+    <h2>Интернет</h2>
+    <p>Игра полностью работает без интернета. Приложение само не делает сетевых запросов.</p>
+    <h2>Дети</h2>
+    <p>Игра ничего не собирает, а значит, не собирает и данные детей.</p>
+    <h2>Изменения</h2>
+    <p>Если политика изменится, новая версия появится на этой странице с новой датой.</p>
+    <h2>Связь</h2>
+    <p>Вопросы о конфиденциальности: <a href="mailto:alexandr.mdr@gmail.com">alexandr.mdr@gmail.com</a>.</p>
+  </section>
+
+  <section id="pt" lang="pt-PT">
+    <h1>Política de Privacidade</h1>
+    <p class="date">Tea & Alibi · em vigor desde 27 de outubro de 2026</p>
+    <h2>Em resumo</h2>
+    <p>O Tea & Alibi não recolhe, não envia nem partilha quaisquer dados pessoais. Não há contas, anúncios, análise de utilização nem seguimento.</p>
+    <h2>O que fica no seu dispositivo</h2>
+    <p>O jogo guarda no seu dispositivo o seu progresso (casos resolvidos, o tabuleiro de cada caso, as suas notas) e as definições (idioma, tamanho do texto, movimento), para que possa continuar mais tarde. O jogo nunca envia estes dados para lado nenhum. São apagados quando apaga a app; na versão web, quando limpa os dados do site.</p>
+    <p>Se usar a cópia de segurança do próprio dispositivo, como o Backup do iCloud, essa cópia pode incluir os dados guardados do jogo, nos termos da Apple e não nos nossos.</p>
+    <h2>Rede</h2>
+    <p>O jogo funciona totalmente sem internet. A app não faz pedidos de rede por iniciativa própria.</p>
+    <h2>Crianças</h2>
+    <p>Como nada é recolhido, o jogo também não recolhe dados de crianças.</p>
+    <h2>Alterações</h2>
+    <p>Se esta política mudar, a nova versão será publicada nesta página com uma nova data.</p>
+    <h2>Contacto</h2>
+    <p>Questões sobre privacidade: <a href="mailto:alexandr.mdr@gmail.com">alexandr.mdr@gmail.com</a>.</p>
+  </section>
+</main>
+</body>
+</html>
